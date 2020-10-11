@@ -1,0 +1,41 @@
+{
+  "name": "toggleswatch",
+  "description": "Toggleswatch is a light/dark togglable theme for Bootstrap.",
+  "version": "4.5.2",
+  "author": "Jmnote",
+  "homepage": "https://github.com/jmnote/toggleswatch",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jmnote/toggleswatch.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jmnote/toggleswatch/issues"
+  },
+  "scripts": {
+    "build": "grunt swatch",
+    "htmllint": "grunt htmllint",
+    "stylelint": "stylelint \"**/*.scss\" --rd",
+    "test": "npm run stylelint"
+  },
+  "files": [
+    "dist/*.css"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "bootstrap": "^4.5.2",
+    "bootswatch": "^4.5.2",
+    "grunt": "^0.4.5",
+    "grunt-commands": "^0.1.8",
+    "grunt-concat-css": "^0.3.2",
+    "grunt-contrib-cssmin": "^3.0.0",
+    "grunt-contrib-jshint": "~0.10.0",
+    "grunt-contrib-nodeunit": "~0.4.1",
+    "grunt-contrib-uglify": "~0.5.0",
+    "grunt-sass": "^3.1.0",
+    "load-grunt-tasks": "^5.1.0",
+    "node-sass": "^4.14.1",
+    "stylelint": "^13.7.2",
+    "stylelint-config-twbs-bootstrap": "^2.1.0"
+  }
+}
