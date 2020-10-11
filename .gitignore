@@ -5,6 +5,7 @@ components
 _site
 *.lock
 .sass-cache/
+temp/
 
 # Local Netlify folder
 .netlify
