@@ -24,13 +24,17 @@ module.exports = function(grunt) {
         precision: 6
       },
       flatly: {
-        src: ['build_flatly.scss'],
+        src: ['temp/flatly.scss'],
         dest: 'temp/flatly.css'
       },
       darkly: {
         src: ['build_darkly.scss'],
         dest: 'temp/darkly.css'
-      }
+      },
+			dist: {
+        src: ['dist.scss'],
+        dest: 'dist/toggleswatch.css'
+			},
     },
     concat_css: {
       options: {
@@ -57,16 +61,16 @@ module.exports = function(grunt) {
   });
   grunt.registerTask('reduce', '', function () {
     const exec = require('child_process').execSync;
-    const result = exec('./reduce_darkly.sh', { encoding: 'utf8' });
+    const result = exec('./reduce_darkly2.sh', { encoding: 'utf8' });
     grunt.log.writeln(result);
   });
-  grunt.registerTask('swatch', 'build a theme from scss ', () => {
+  grunt.registerTask('default', 'build a theme from scss ', () => {
     grunt.task.run([
+      'reduce',
       'sass:flatly',
       'sass:darkly',
-      'reduce',
-      'concat_css',
-      'cssmin:dist'
+			'concat_css',
+			'cssmin',
     ]);
   });
 };
