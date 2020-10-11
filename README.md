@@ -1,4 +1,4 @@
-# toggleswatch
+# Toggleswatch
 
 DEMO - https://jsfiddle.net/jmnote/uyfhcLbs/
 
