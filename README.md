@@ -1,3 +1,3 @@
 # toggleswatch
 
-[https://jsfiddle.net/jmnote/uyfhcLbs/ jsfiddle DEMO]
+DEMO - https://jsfiddle.net/jmnote/uyfhcLbs/
