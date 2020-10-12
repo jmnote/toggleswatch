@@ -1,5 +1,7 @@
 # Toggleswatch
 
+<img src="./assets/logo.svg">
+
 Toggleswatch is a light/dark togglable theme for Bootstrap.
 * Based on Bootstrap & Bootswatch
 
