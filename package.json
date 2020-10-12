@@ -29,6 +29,7 @@
     "grunt-commands": "^0.1.8",
     "grunt-concat-css": "^0.3.2",
     "grunt-contrib-clean": "^2.0.0",
+    "grunt-contrib-concat": "^1.0.1",
     "grunt-contrib-cssmin": "^3.0.0",
     "grunt-contrib-jshint": "~0.10.0",
     "grunt-contrib-nodeunit": "~0.4.1",

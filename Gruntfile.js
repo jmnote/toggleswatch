@@ -6,20 +6,29 @@ const banner = `/*!
  * Homepage: ${pkg.homepage}
  * Copyright 2020-${new Date().getFullYear()} ${pkg.author}
  * Licensed under ${pkg.license}
- * Based on Bootstrap
+ * Based on Bootswatch
 */
 `;
 
-module.exports = function(grunt) {
-
-  grunt.loadNpmTasks('grunt-sass');
+module.exports = grunt => {
   grunt.loadNpmTasks('grunt-contrib-clean');
+  grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
+  grunt.loadNpmTasks('grunt-sass');
 
   grunt.initConfig({
     clean: {
       darkly_boots: {
         src: ['scss/darkly/bootstrap/*', 'scss/darkly/bootswatch/*']
+      }
+    },
+    concat: {
+      options: {
+        banner
+      },
+      dist: {
+        src: ['temp/bootstrap.css'],
+        dest: 'dist/bootstrap.css'
       }
     },
     sass: {
@@ -38,7 +47,7 @@ module.exports = function(grunt) {
       },
       dist: {
         src: ['scss/build.scss'],
-        dest: 'dist/bootstrap.css'
+        dest: 'temp/bootstrap.css'
       }
     },
     cssmin: {
@@ -78,6 +87,7 @@ module.exports = function(grunt) {
       'sass:darkly',
       'check:temp_darkly',
       'sass:dist',
+      'concat:dist',
       'cssmin:dist',
     ]);
   });
