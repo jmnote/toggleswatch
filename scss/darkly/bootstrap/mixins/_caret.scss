@@ -1,0 +1,30 @@
+@mixin caret-down() {
+}
+@mixin caret-up() {
+}
+@mixin caret-right() {
+}
+@mixin caret-left() {
+}
+@mixin caret($direction: down) {
+  @if $enable-caret {
+    &::after {
+      @if $direction == down {
+        @include caret-down();
+      } @else if $direction == up {
+        @include caret-up();
+      } @else if $direction == right {
+        @include caret-right();
+      }
+    }
+    @if $direction == left {
+      &::after {
+      }
+      &::before {
+        @include caret-left();
+      }
+    }
+    &:empty::after {
+    }
+  }
+}

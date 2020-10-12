@@ -1,0 +1,68 @@
+// stylelint-disable declaration-no-important, selector-list-comma-newline-after
+//
+// Headings
+//
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  color: $headings-color;
+}
+h1, .h1 { @include font-size($h1-font-size); }
+h2, .h2 { @include font-size($h2-font-size); }
+h3, .h3 { @include font-size($h3-font-size); }
+h4, .h4 { @include font-size($h4-font-size); }
+h5, .h5 { @include font-size($h5-font-size); }
+h6, .h6 { @include font-size($h6-font-size); }
+.lead {
+}
+// Type display classes
+.display-1 {
+}
+.display-2 {
+}
+.display-3 {
+}
+.display-4 {
+}
+//
+// Horizontal rules
+//
+hr {
+}
+//
+// Emphasis
+//
+small,
+.small {
+}
+mark,
+.mark {
+  background-color: $mark-bg;
+}
+//
+// Lists
+//
+.list-unstyled {
+  @include list-unstyled();
+}
+// Inline turns list items into inline-block
+.list-inline {
+  @include list-unstyled();
+}
+.list-inline-item {
+  &:not(:last-child) {
+  }
+}
+//
+// Misc
+//
+// Builds on `abbr`
+.initialism {
+}
+// Blockquotes
+.blockquote {
+}
+.blockquote-footer {
+  color: $blockquote-small-color;
+  &::before {
+  }
+}

@@ -1,0 +1,52 @@
+// stylelint-disable property-blacklist
+// Single side border-radius
+// Helper function to replace negative values with 0
+@function valid-radius($radius) {
+  $return: ();
+  @each $value in $radius {
+    @if type-of($value) == number {
+      $return: append($return, max($value, 0));
+    } @else {
+      $return: append($return, $value);
+    }
+  }
+  @return $return;
+}
+@mixin border-radius($radius: $border-radius, $fallback-border-radius: false) {
+  @if $enable-rounded {
+  }
+  @else if $fallback-border-radius != false {
+  }
+}
+@mixin border-top-radius($radius) {
+  @if $enable-rounded {
+  }
+}
+@mixin border-right-radius($radius) {
+  @if $enable-rounded {
+  }
+}
+@mixin border-bottom-radius($radius) {
+  @if $enable-rounded {
+  }
+}
+@mixin border-left-radius($radius) {
+  @if $enable-rounded {
+  }
+}
+@mixin border-top-left-radius($radius) {
+  @if $enable-rounded {
+  }
+}
+@mixin border-top-right-radius($radius) {
+  @if $enable-rounded {
+  }
+}
+@mixin border-bottom-right-radius($radius) {
+  @if $enable-rounded {
+  }
+}
+@mixin border-bottom-left-radius($radius) {
+  @if $enable-rounded {
+  }
+}

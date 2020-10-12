@@ -1,0 +1,8 @@
+.jumbotron {
+  color: $jumbotron-color;
+  background-color: $jumbotron-bg;
+  @include media-breakpoint-up(sm) {
+  }
+}
+.jumbotron-fluid {
+}

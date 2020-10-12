@@ -1,0 +1,14 @@
+// stylelint-disable declaration-no-important
+// Common values
+@each $position in $positions {
+  .position-#{$position} { position: $position !important; }
+}
+// Shorthand
+.fixed-top {
+}
+.fixed-bottom {
+}
+.sticky-top {
+  @supports (position: sticky) {
+  }
+}

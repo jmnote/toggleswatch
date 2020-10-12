@@ -1,0 +1,40 @@
+.pagination {
+  @include list-unstyled();
+}
+.page-link {
+  color: $pagination-color;
+  background-color: $pagination-bg;
+  &:hover {
+    color: $pagination-hover-color;
+    background-color: $pagination-hover-bg;
+  }
+  &:focus {
+    box-shadow: $pagination-focus-box-shadow;
+  }
+}
+.page-item {
+  &:first-child {
+    .page-link {
+    }
+  }
+  &:last-child {
+    .page-link {
+    }
+  }
+  &.active .page-link {
+    color: $pagination-active-color;
+    background-color: $pagination-active-bg;
+  }
+  &.disabled .page-link {
+    color: $pagination-disabled-color;
+    // Opinionated: remove the "hand" cursor set previously for .page-link
+    background-color: $pagination-disabled-bg;
+  }
+}
+//
+// Sizing
+//
+.pagination-lg {
+}
+.pagination-sm {
+}

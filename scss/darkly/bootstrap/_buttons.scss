@@ -1,0 +1,84 @@
+// stylelint-disable selector-no-qualifying-type
+//
+// Base styles
+//
+.btn {
+  color: $body-color;
+  @include hover() {
+    color: $body-color;
+  }
+  &:focus,
+  &.focus {
+    box-shadow: $btn-focus-box-shadow;
+  }
+  // Disabled comes first so active can properly restyle
+  &.disabled,
+  &:disabled {
+  }
+  &:not(:disabled):not(.disabled) {
+    &:active,
+    &.active {
+      @include box-shadow($btn-active-box-shadow);
+      &:focus {
+        @include box-shadow($btn-focus-box-shadow, $btn-active-box-shadow);
+      }
+    }
+  }
+}
+// Future-proof disabling of clicks on `<a>` elements
+a.btn.disabled,
+fieldset:disabled a.btn {
+}
+//
+// Alternate buttons
+//
+@each $color, $value in $theme-colors {
+  .btn-#{$color} {
+    @include button-variant($value, $value);
+  }
+}
+@each $color, $value in $theme-colors {
+  .btn-outline-#{$color} {
+    @include button-outline-variant($value);
+  }
+}
+//
+// Link buttons
+//
+// Make a button look and behave like a link
+.btn-link {
+  color: $link-color;
+  @include hover() {
+    color: $link-hover-color;
+  }
+  &:focus,
+  &.focus {
+  }
+  &:disabled,
+  &.disabled {
+    color: $btn-link-disabled-color;
+  }
+  // No need for an active state here
+}
+//
+// Button Sizes
+//
+.btn-lg {
+}
+.btn-sm {
+}
+//
+// Block button
+//
+.btn-block {
+  // Vertically space out multiple block buttons
+  + .btn-block {
+  }
+}
+// Specificity overrides
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+  &.btn-block {
+  }
+}

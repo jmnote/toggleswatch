@@ -1,0 +1,24 @@
+// Inline code
+code {
+  color: $code-color;
+  // Streamline the style when inside anchors to avoid broken underline and more
+  a > & {
+  }
+}
+// User input typically entered via keyboard
+kbd {
+  color: $kbd-color;
+  background-color: $kbd-bg;
+  @include box-shadow($kbd-box-shadow);
+  kbd {
+  }
+}
+// Blocks of code
+pre {
+  // Account for some code outputs that place code tags in pre tags
+  code {
+  }
+}
+// Enable scrollable blocks of code
+.pre-scrollable {
+}

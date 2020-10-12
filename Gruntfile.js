@@ -13,10 +13,15 @@ const banner = `/*!
 module.exports = function(grunt) {
 
   grunt.loadNpmTasks('grunt-sass');
-  grunt.loadNpmTasks('grunt-concat-css');
+  grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
 
   grunt.initConfig({
+    clean: {
+      darkly_boots: {
+        src: ['scss/darkly/bootstrap/*', 'scss/darkly/bootswatch/*']
+      }
+    },
     sass: {
       options: {
         implementation: sass,
@@ -24,25 +29,17 @@ module.exports = function(grunt) {
         precision: 6
       },
       flatly: {
-        src: ['temp/flatly.scss'],
-        dest: 'temp/flatly.css'
+        src: ['scss/flaty/flaty.scss'],
+        dest: 'temp/flaty.scss'
       },
       darkly: {
-        src: ['build_darkly.scss'],
-        dest: 'temp/darkly.css'
+        src: ['scss/darkly/darkly.scss'],
+        dest: 'temp/darkly.scss'
       },
-			dist: {
-        src: ['dist.scss'],
-        dest: 'dist/toggleswatch.css'
-			},
-    },
-    concat_css: {
-      options: {
-      },
-      all: {
-        src: ["temp/*.css"],
-        dest: "dist/toggleswatch.css"
-      },
+      dist: {
+        src: ['scss/build.scss'],
+        dest: 'dist/bootstrap.css'
+      }
     },
     cssmin: {
       options: {
@@ -54,23 +51,34 @@ module.exports = function(grunt) {
         }
       },
       dist: {
-        src: ['dist/toggleswatch.css'],
-        dest: 'dist/toggleswatch.min.css'
+        src: ['dist/bootstrap.css'],
+        dest: 'dist/bootstrap.min.css'
       }
     },
   });
-  grunt.registerTask('reduce', '', function () {
-    const exec = require('child_process').execSync;
-    const result = exec('./reduce_darkly2.sh', { encoding: 'utf8' });
-    grunt.log.writeln(result);
+  grunt.registerTask('copy:darkly_boots', '', function () {
+    let exec = require('child_process').execSync;
+    grunt.log.writeln(exec('cp -a node_modules/bootstrap/scss/* scss/darkly/bootstrap/'));
+    grunt.log.writeln(exec('cp -a node_modules/bootswatch/dist/darkly/*.scss scss/darkly/bootswatch/'));
   });
-  grunt.registerTask('default', 'build a theme from scss ', () => {
+  grunt.registerTask('prune:darkly_boots', '', function () {
+    let exec = require('child_process').execSync;
+    grunt.log.writeln(exec('./prune_darkly_boots.sh'));
+  });
+  grunt.registerTask('check:temp_darkly', '', function () {
+    let exec = require('child_process').execSync;
+    grunt.log.writeln(exec('./check_temp_darkly.sh'));
+  });
+  grunt.registerTask('default', 'build dist css', () => {
     grunt.task.run([
-      'reduce',
+      'clean:darkly_boots',
+      'copy:darkly_boots',
+      'prune:darkly_boots',
       'sass:flatly',
       'sass:darkly',
-			'concat_css',
-			'cssmin',
+      'check:temp_darkly',
+      'sass:dist',
+      'cssmin:dist',
     ]);
   });
 };

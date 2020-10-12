@@ -1,0 +1,22 @@
+.toast {
+  // Prevents from shrinking in IE11, when in a flex container
+  // See https://github.com/twbs/bootstrap/issues/28341
+  color: $toast-color;
+  background-color: $toast-background-color;
+  border: $toast-border-width solid $toast-border-color;
+  box-shadow: $toast-box-shadow;
+  &:not(:last-child) {
+  }
+  &.showing {
+  }
+  &.show {
+  }
+  &.hide {
+  }
+}
+.toast-header {
+  color: $toast-header-color;
+  background-color: $toast-header-background-color;
+}
+.toast-body {
+}

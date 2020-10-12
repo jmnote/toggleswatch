@@ -1,0 +1,22 @@
+// Disable animation if transitions are disabled
+@if $enable-transitions {
+}
+.progress {
+  background-color: $progress-bg;
+  @include box-shadow($progress-box-shadow);
+}
+.progress-bar {
+  color: $progress-bar-color;
+  background-color: $progress-bar-bg;
+}
+.progress-bar-striped {
+  @include gradient-striped();
+}
+@if $enable-transitions {
+  .progress-bar-animated {
+    @if $enable-prefers-reduced-motion-media-query {
+      @media (prefers-reduced-motion: reduce) {
+      }
+    }
+  }
+}

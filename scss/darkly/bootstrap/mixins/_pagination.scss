@@ -1,0 +1,15 @@
+// Pagination
+@mixin pagination-size($padding-y, $padding-x, $font-size, $line-height, $border-radius) {
+  .page-link {
+  }
+  .page-item {
+    &:first-child {
+      .page-link {
+      }
+    }
+    &:last-child {
+      .page-link {
+      }
+    }
+  }
+}

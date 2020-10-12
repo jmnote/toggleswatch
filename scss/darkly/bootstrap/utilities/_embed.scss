@@ -1,0 +1,19 @@
+// Credit: Nicolas Gallagher and SUIT CSS.
+.embed-responsive {
+  &::before {
+  }
+  .embed-responsive-item,
+  iframe,
+  embed,
+  object,
+  video {
+  }
+}
+@each $embed-responsive-aspect-ratio in $embed-responsive-aspect-ratios {
+  $embed-responsive-aspect-ratio-x: nth($embed-responsive-aspect-ratio, 1);
+  $embed-responsive-aspect-ratio-y: nth($embed-responsive-aspect-ratio, 2);
+  .embed-responsive-#{$embed-responsive-aspect-ratio-x}by#{$embed-responsive-aspect-ratio-y} {
+    &::before {
+    }
+  }
+}

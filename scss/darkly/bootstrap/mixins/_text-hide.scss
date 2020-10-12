@@ -1,0 +1,5 @@
+// CSS image replacement
+@mixin text-hide($ignore-warning: false) {
+  // stylelint-disable-next-line font-family-no-missing-generic-family-keyword
+  @include deprecate("`text-hide()`", "v4.1.0", "v5", $ignore-warning);
+}

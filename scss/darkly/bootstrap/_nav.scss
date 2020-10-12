@@ -1,0 +1,73 @@
+// Base class
+//
+// Kickstart any navigation component with a set of style resets. Works with
+// `<nav>`s, `<ul>`s or `<ol>`s.
+.nav {
+}
+.nav-link {
+  @include hover-focus() {
+  }
+  // Disabled state lightens text
+  &.disabled {
+    color: $nav-link-disabled-color;
+  }
+}
+//
+// Tabs
+//
+.nav-tabs {
+  .nav-item {
+  }
+  .nav-link {
+    @include hover-focus() {
+      border-color: $nav-tabs-link-hover-border-color;
+    }
+    &.disabled {
+      color: $nav-link-disabled-color;
+    }
+  }
+  .nav-link.active,
+  .nav-item.show .nav-link {
+    color: $nav-tabs-link-active-color;
+    background-color: $nav-tabs-link-active-bg;
+    border-color: $nav-tabs-link-active-border-color;
+  }
+  .dropdown-menu {
+    // Make dropdown border overlap tab border
+    // Remove the top rounded corners here since there is a hard edge above the menu
+  }
+}
+//
+// Pills
+//
+.nav-pills {
+  .nav-link {
+  }
+  .nav-link.active,
+  .show > .nav-link {
+    color: $nav-pills-link-active-color;
+    background-color: $nav-pills-link-active-bg;
+  }
+}
+//
+// Justified variants
+//
+.nav-fill {
+  > .nav-link,
+  .nav-item {
+  }
+}
+.nav-justified {
+  > .nav-link,
+  .nav-item {
+  }
+}
+// Tabbable tabs
+//
+// Hide tabbable panes to start, show them when `.active`
+.tab-content {
+  > .tab-pane {
+  }
+  > .active {
+  }
+}
