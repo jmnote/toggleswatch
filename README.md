@@ -17,7 +17,7 @@ https://unpkg.com/browse/toggleswatch@4.5.2/
 <link rel="stylesheet" href="https://unpkg.com/toggleswatch@4.5.2/dist/toggleswatch.min.css" />
 ```
 
-# Filesize
+# File size comparison
 
 version |boostrap | bootswatch        | toggleswatch
 ------- | -------- | ----------------- | ------------
