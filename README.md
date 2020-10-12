@@ -16,7 +16,7 @@ https://unpkg.com/browse/toggleswatch@4.5.2/
 
 boostrap | bootswatch flatly | bootswatch darkly | toggleswatch
 -------- | ----------------- | ----------------- | ------------
-157K     | 181K              | 181K              | 189K
+157K     | 181K              | 181K              | 221K
 
 ## Copyright and License
 
