@@ -7,10 +7,10 @@ Toggleswatch is a light/dark togglable theme for Bootstrap.
 
 # CDN
 
-https://unpkg.com/browse/toggleswatch@4.5.2-1/
+https://unpkg.com/browse/toggleswatch@4.5.2-3/
 
 ```html
-<link rel="stylesheet" href="https://unpkg.com/toggleswatch@4.5.2-1/dist/boostrap.min.css" />
+<link rel="stylesheet" href="https://unpkg.com/toggleswatch@4.5.2-3/dist/boostrap.min.css" />
 ```
 
 # Demo
