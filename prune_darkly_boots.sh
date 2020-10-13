@@ -14,6 +14,7 @@ START_WITHS=(
 	border-radius:
 	border-style:
 	border-width:
+	border-collapse:
 	border-top:
 	border-top-width:
 	border-top-right-radius:
@@ -43,6 +44,7 @@ START_WITHS=(
 	flex-shrink:
 	flex-wrap:
 	float:
+	font:
 	font-family:
 	font-size:
 	font-style:
@@ -103,6 +105,8 @@ START_WITHS=(
 	word-spacing:
 	word-wrap:
 	z-index:
+	-ms-overflow-style:
+	-webkit-appearance: 
 	-webkit-text-size-adjust:
 	-webkit-overflow-scrolling:
 	'@include clearfix('
@@ -124,6 +128,7 @@ START_WITHS=(
 REGEXS=(
 	'background-image: none;'
 	'background: no-repeat center center;'
+	'background: no-repeat 50% \/ 50% 50%;'
 	'background: no-repeat 50% \/ 100% 100%;'
 	'background-color: transparent;'
 	'background-color: currentColor;'
@@ -139,6 +144,7 @@ REGEXS=(
 	'border-color: $pagination-active-border-color;'
 	'border-color: $pagination-disabled-border-color;'
 	'border-right-color: transparent;'
+	'bottom: -.25em;'
 	'color: inherit;'
 	'color: transparent;'
 	'color: $pre-color;'
@@ -153,6 +159,7 @@ REGEXS=(
 	'text-shadow: none;'
 	'text-shadow: none !important;',
 	'text-shadow: $close-text-shadow;'
+	'top: -.5em;'
 	'@extend \.btn-sm;'
 	'@extend \.btn-lg;'
 	'@extend %container-navbar-expand-#{$breakpoint};'

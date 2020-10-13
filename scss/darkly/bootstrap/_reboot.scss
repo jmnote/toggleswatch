@@ -106,8 +106,8 @@ small {
 sub,
 sup {
 }
-sub { bottom: -.25em; }
-sup { top: -.5em; }
+sub {  }
+sup {  }
 //
 // Links
 //
@@ -140,7 +140,6 @@ pre {
   // Don't allow content to break outside
   // Disable auto-hiding scrollbar in IE & legacy Edge to avoid overlap,
   // making it impossible to interact with the content
-  -ms-overflow-style: scrollbar;
 }
 //
 // Figures
@@ -161,7 +160,6 @@ svg {
 // Tables
 //
 table {
-  border-collapse: collapse; // Prevent double borders
 }
 caption {
   color: $table-caption-color;
@@ -217,7 +215,6 @@ button,
 [type="button"], // 1
 [type="reset"],
 [type="submit"] {
-  -webkit-appearance: button; // 2
 }
 // Opinionated: add "hand" cursor to non-disabled button elements.
 @if $enable-pointer-cursor-for-buttons {
@@ -265,21 +262,17 @@ progress {
   // `.form-control` class can properly style them. Note that this cannot simply
   // be added to `.form-control` as it's not specific enough. For details, see
   // https://github.com/twbs/bootstrap/issues/11586.
-  -webkit-appearance: none;
 }
 //
 // Remove the inner padding in Chrome and Safari on macOS.
 //
 [type="search"]::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 //
 // 1. Correct the inability to style clickable types in iOS and Safari.
 // 2. Change font properties to `inherit` in Safari.
 //
 ::-webkit-file-upload-button {
-  font: inherit; // 2
-  -webkit-appearance: button; // 1
 }
 //
 // Correct element displays
