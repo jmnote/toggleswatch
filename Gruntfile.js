@@ -38,8 +38,8 @@ module.exports = grunt => {
         precision: 6
       },
       flatly: {
-        src: ['scss/flaty/flaty.scss'],
-        dest: 'temp/flaty.scss'
+        src: ['scss/flatly/flatly.scss'],
+        dest: 'temp/flatly.scss'
       },
       darkly: {
         src: ['scss/darkly/darkly.scss'],
