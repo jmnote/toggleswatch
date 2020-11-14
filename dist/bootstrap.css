@@ -9896,6 +9896,10 @@ a.text-dark:hover, a.text-dark:focus {
   background-color: #222;
 }
 
+.d pre {
+  color: inherit;
+}
+
 .d .table {
   color: #fff;
 }

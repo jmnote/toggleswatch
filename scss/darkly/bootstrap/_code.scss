@@ -15,6 +15,7 @@ kbd {
 }
 // Blocks of code
 pre {
+  color: $pre-color;
   // Account for some code outputs that place code tags in pre tags
   code {
   }
